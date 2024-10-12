@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 
 from pathlib import Path
+
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -45,13 +46,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'django.contrib.sites',
     'mptt',
     'allauth',
     'allauth.account',
-
-    # 'allauth.socialaccount',
-    # 'allauth.socialaccount.providers.yandex',
+    'django.contrib.flatpages.models.FlatPage',
+     #'allauth.socialaccount',
+     #'allauth.socialaccount.providers.yandex',
 
     'callboard',
     'gallery',
@@ -76,6 +77,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'fanservice.urls'
@@ -98,7 +101,7 @@ TEMPLATES = [
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
-    # 'allauth.account.auth_backends.AuthenticationBackend',
+     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
 
