@@ -50,7 +50,6 @@ INSTALLED_APPS = [
     'mptt',
     'allauth',
     'allauth.account',
-    'django.contrib.flatpages.models.FlatPage',
      #'allauth.socialaccount',
      #'allauth.socialaccount.providers.yandex',
 
@@ -77,7 +76,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
     'allauth.account.middleware.AccountMiddleware',
 ]
 
